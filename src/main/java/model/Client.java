@@ -1,5 +1,11 @@
 package model;
 
+/**
+ * Client class -
+ * Resembles the client table in the database and has the fields exactly the same type as the columns from the
+ * corresponding table. Containts constructors, getters and setters for creating and accessing the Client object.
+ *
+ */
 public class Client {
     private int id;
     private String name;

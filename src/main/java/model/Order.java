@@ -1,5 +1,10 @@
 package model;
-
+/**
+ * Order class -
+ * Resembles the order table in the database and has the fields exactly the same type as the columns from the
+ * corresponding table. Contains constructors, getters and setters for creating and accessing the Order object.
+ *
+ */
 public class Order {
     private int idOrder;
     private int idClient;

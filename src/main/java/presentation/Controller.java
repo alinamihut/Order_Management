@@ -14,6 +14,12 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
+
+/**
+ * Controller class:
+ * - creates the connection between the GUI and the model, initialises the main scene and contains the methods which create and load the
+ * next three scenes in the application (clients scene, products scene and orders scene)
+ */
 public class Controller {
     public Button btnClients;
     public Button btnProducts;
@@ -21,15 +27,6 @@ public class Controller {
 
 
     public void setSceneClients(ActionEvent actionEvent) throws IOException {
-      // Scene sceneClients = btnClients.getScene();
-       // Window window = sceneClients.getWindow();
-       // Stage stageClients = (Stage) window;
-        //FXMLLoader loader= new FXMLLoader(getClass().getResource("src/main/java/clients.fxml"));
-        //Stage stageClients = (Stage) btnClients.getScene().getWindow();
-        //Scene sceneClients = new Scene(loader.getRoot());
-        //.setScene(sceneClients);
-
-        //Parent parent = FXMLLoader.load(getClass().getResource("src/main/java/clients.fxml"));
         URL url= new File("src/main/java/clients.fxml").toURI().toURL();
         Parent root= FXMLLoader.load(url);
         Scene sceneClients = new Scene(root);
@@ -59,8 +56,6 @@ public class Controller {
         window.setScene(sceneOrders);
         window.setTitle("Orders");
         window.show();
-        //ordersController ordersController = new ordersController();
-        // ordersController.setValuesForCbClients();
 
     }
 }

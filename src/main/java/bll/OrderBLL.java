@@ -8,7 +8,10 @@ import presentation.View;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Order BLL class - contains insertOrder(Order order) method which encapsulates the application logic for validating
+ * and inserting a new entry in the orders table
+ **/
 public class OrderBLL {
     private List<Validator<Order>> validators;
     public OrderBLL() {

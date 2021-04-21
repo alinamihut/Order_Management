@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.ordersController" >
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.ordersController">
     <Button fx:id="btnGoBack" layoutX="37.0" layoutY="355.0" mnemonicParsing="false" onAction="#setSceneMain" prefHeight="27.0" prefWidth="88.0" text="Go back">
         <font>
             <Font size="14.0" />
@@ -13,11 +13,11 @@
     <Label layoutX="30.0" layoutY="48.0" text="Product ID:" />
     <Label layoutX="27.0" layoutY="15.0" text=" Client ID:" />
     <TableView fx:id="tbOrders" layoutX="93.0" layoutY="109.0" prefHeight="240.0" prefWidth="413.0" />
-    <Button id="btnAddOrder" fx:id="btnAddOrder" layoutX="318.0" layoutY="17.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="134.0" text="Add order" onAction="#insertOrder" />
-    <Button id="btnDisplayAll" fx:id="btnDisplayAll" layoutX="465.0" layoutY="61.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="134.0" text="Display all orders" onAction="#showAllOrders"   />
+    <Button id="btnAddOrder" fx:id="btnAddOrder" layoutX="318.0" layoutY="17.0" mnemonicParsing="false" onAction="#insertOrder" prefHeight="39.0" prefWidth="134.0" text="Add order" />
+    <Button id="btnDisplayAll" fx:id="btnDisplayAll" layoutX="318.0" layoutY="61.0" mnemonicParsing="false" onAction="#showAllOrders" prefHeight="39.0" prefWidth="134.0" text="Display all orders" />
     <TextField fx:id="tfProductQuantity" layoutX="94.0" layoutY="78.0" prefHeight="18.0" prefWidth="150.0" />
     <Label layoutX="32.0" layoutY="81.0" prefHeight="18.0" prefWidth="54.0" text="Quantity:" />
    <ChoiceBox fx:id="cbClient" layoutX="94.0" layoutY="11.0" onMouseClicked="#setValuesForCbClients" prefWidth="150.0" />
    <ChoiceBox fx:id="cbProduct" layoutX="94.0" layoutY="44.0" onMouseClicked="#setValuesForCbProducts" prefWidth="150.0" />
-   <Button id="btnGenerateBill" fx:id="btnGenerateBill" layoutX="318.0" layoutY="61.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="134.0" text="Generate bill" />
+   <Button id="btnGenerateBill" fx:id="btnGenerateBill" layoutX="460.0" layoutY="17.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="125.0" text="Generate bill" />
 </AnchorPane>

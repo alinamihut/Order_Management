@@ -8,10 +8,12 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 /**
- *
- * @author Alina
- *
- *	ClientDAO
+ *	ClientDAO - contains the queries and the methods that define the common operations for accessing the clients table:
+ *  findById(int clientId);
+ *	insert(Client client);
+ *  delete(int clientId);
+ *  update (Client client, int clientID);
+ *  selectAll();
  */
 public class ClientDAO{
     protected static final Logger LOGGER = Logger.getLogger(ClientDAO.class.getName());

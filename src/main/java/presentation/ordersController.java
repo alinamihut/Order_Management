@@ -25,7 +25,13 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
+/**
+ * Orders controller - creates the flow between the orders' scene and the application. Has the methods which perform the operations
+ * insert and display all on the orders table, on a top level by sending the data from the user to the business layer
+ * of the application.
+ * Methods setValuesForCbClients() and  setValuesForCbProducts() set the values for the choice boxes where the user selects the order to be placed
+ * by a customer and insertOrder() created the order object and sends it to the business layer, where it is inserted in the corresponding table.
+ */
 public class ordersController {
     public Button btnAddOrder;
     public Button btnDisplayAll;

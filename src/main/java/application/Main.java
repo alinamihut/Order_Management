@@ -9,7 +9,11 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-
+/**
+ * @author Alina
+ * Main class -
+ * contains the methods which initialize the primary stage and lauch the application
+ **/
     public class Main extends Application {
 
         @Override

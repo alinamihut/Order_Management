@@ -19,6 +19,11 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * Clients controller - creates the flow between the clients' scene and the application. Has the methods which perform the operations
+ * delete, update, insert and show all on the clients table, on a top level by sending the data from the user to the bussiness layer
+ * of the application.
+ */
 public class clientsController {
     public Button btnGoBack;
     public Button btnUpdate;

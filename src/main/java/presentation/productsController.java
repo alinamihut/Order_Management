@@ -20,7 +20,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
+/**
+ * Products controller - creates the flow between the products' scene and the application. Has the methods which perform the operations
+ * delete, update, insert and show all on the products table, on a top level by sending the data from the user to the bussiness layer
+ * of the application.
+ */
 public class productsController {
     public Button btnGoBack;
     public Button btnUpdate;

@@ -1,6 +1,5 @@
 package presentation;
 
-import javafx.beans.property.SimpleObjectProperty;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -10,6 +9,12 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * View Class - contains methods related to the GUI: showAlert(String s) displays an alert on screed and
+ * createTable(ArrayList<?> listOfObjects, TableView table) takes as parameters a receives a list of objects
+ * and generates the header of the table by extracting through reflection the object properties and
+ * then populates the table with the values of the elements from the list.
+ */
 public class View {
     public static void showAlert(String s) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -24,7 +29,6 @@ public class View {
         int size = listOfObjects.getClass().getDeclaredFields().length;
         int columnIndex = 0;
         for (Field field : listOfObjects.get(0).getClass().getDeclaredFields()){
-            System.out.println( field.getName());
             TableColumn<List<Object>, Object> column = new TableColumn<>(field.getName());
             int finalColumnIndex = columnIndex;
             column.setCellValueFactory( new PropertyValueFactory<List<Object>, Object>(field.getName()));

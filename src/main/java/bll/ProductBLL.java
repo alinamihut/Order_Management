@@ -9,7 +9,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
-
+/**
+ * Product BLL class - contains the methods which encapsulate the application logic for the operations on the products table
+ * (finding a product by id, inserting a product in the table, deleting a product, updating and displaying all entries in the
+ * table).
+ **/
 public class ProductBLL {
 
     private List<Validator<Product>> validators;

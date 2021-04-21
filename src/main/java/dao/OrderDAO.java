@@ -1,14 +1,17 @@
 package dao;
 
 import connection.ConnectionFactory;
-import model.Client;
 import model.Order;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+/**
+ *	OrderDAO - contains the queries and the methods that define the common operations for accessing the orders table:
+ *	insert(Order order;
+ *  selectAll();
+ */
 public class OrderDAO{
     protected static final Logger LOGGER = Logger.getLogger(OrderDAO.class.getName());
     private static final String insertStatementString = "INSERT INTO ptassignment.order (idClient, idProduct, quantity)"

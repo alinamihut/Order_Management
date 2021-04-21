@@ -4,6 +4,11 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * ConnectionFactory -
+ * Contains the name of the driver, the database, location (DBURL), and the user and the password for accessing the MySQL Server.
+ * Also, contains methods for creating a connection, getting an active connection and closing a connection, a Statement or a ResultSet
+ */
 public class ConnectionFactory {
 
     private static final Logger LOGGER = Logger.getLogger(ConnectionFactory.class.getName());

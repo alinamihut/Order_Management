@@ -1,5 +1,10 @@
 package model;
-
+/**
+ * Product class -
+ * Resembles the product table in the database and has the fields exactly the same type as the columns from the
+ * corresponding table. Contains constructors, getters and setters for creating and accessing the Product object.
+ *
+ */
 public class Product {
     private int id;
     private String name;

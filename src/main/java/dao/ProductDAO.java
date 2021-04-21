@@ -1,14 +1,19 @@
 package dao;
 
 import connection.ConnectionFactory;
-import model.Client;
 import model.Product;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+/**
+ *	ProductDAO - contains the queries and the methods that define the common operations for accessing the products table:
+ *  findById(int productId);
+ *	insert(Product product);
+ *  delete(int productId);
+ *  update (Product product, int productId);
+ *  selectAll();
+ */
 public class ProductDAO {
     protected static final Logger LOGGER = Logger.getLogger(ProductDAO.class.getName());
     private static final String insertStatementString = "INSERT INTO product (name,price,stock)"
@@ -79,8 +84,6 @@ public class ProductDAO {
             deleteStatement = dbConnection.prepareStatement(deleteStatementString, Statement.RETURN_GENERATED_KEYS);
             deleteStatement.setLong(1, productId);
             deleteStatement.executeUpdate();
-            //rs = deleteStatement.executeQuery();
-            //rs.next();
         }
         catch (SQLException e) {
             LOGGER.log(Level.WARNING,"ProductDAO:delete " + e.getMessage());
