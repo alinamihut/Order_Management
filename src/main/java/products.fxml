@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.productsController">
+    <children>
+        <Button fx:id="btnGoBack" layoutX="37.0" layoutY="355.0" mnemonicParsing="false" onAction="#setSceneMain" prefHeight="27.0" prefWidth="88.0" text="Go back">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+        <Label layoutX="37.0" layoutY="28.0" text="ID:" />
+        <Label layoutX="37.0" layoutY="56.0" text="Name:" />
+        <TableView fx:id="tbProducts" layoutX="37.0" layoutY="105.0" prefHeight="244.0" prefWidth="393.0" />
+        <Button fx:id="btnUpdate" layoutX="448.0" layoutY="235.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="138.0" text="Update" onAction="#updateProduct"/>
+        <Button fx:id="btnDelete" layoutX="451.0" layoutY="180.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="130.0" text="Delete" onAction="#deleteProduct"/>
+        <Button fx:id="btnInsert" layoutX="451.0" layoutY="124.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="130.0" text="Insert" onAction="#insertProduct"/>
+        <Button fx:id="btnDisplayAll" layoutX="448.0" layoutY="296.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="138.0" text="Display all" onAction="#showAllProducts" />
+        <TextField fx:id="tfProductID" layoutX="81.0" layoutY="21.0" />
+        <TextField fx:id="tfProductPrice" layoutX="281.0" layoutY="24.0" prefHeight="18.0" prefWidth="150.0" />
+        <Label layoutX="245.0" layoutY="27.0" prefHeight="18.0" prefWidth="54.0" text="Price:" />
+        <TextField fx:id="tfProductName" layoutX="81.0" layoutY="52.0" />
+        <TextField fx:id="tfProductStock" layoutX="282.0" layoutY="52.0" />
+        <Label layoutX="245.0" layoutY="56.0" text="Stock:" />
+    </children>
+</AnchorPane>
