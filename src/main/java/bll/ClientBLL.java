@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 /**
  *  Client BLL class - contains the methods which encapsulate the application logic for the operations on the clients table
- * (finding a client by id, inserting a client in the table, deleting a client, updating and displaying al entries in the table).
+ * (finding a client by id, inserting a client in the table, deleting a client, updating and displaying all entries in the table).
  **/
 public class ClientBLL {
     private List<Validator<Client>> validators;

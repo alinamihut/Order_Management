@@ -1,38 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="429.0"
-            prefWidth="625.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/11.0.1"
-            xmlns:fx="http://javafx.com/fxml/1"  fx:controller="presentation.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="429.0" prefWidth="625.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.Controller">
    <effect>
-      <ColorAdjust/>
+      <ColorAdjust />
    </effect>
-   <Button id="btnClients" fx:id="btnClients" layoutX="57.0" layoutY="227.0" mnemonicParsing="false" prefHeight="51.0"
-           prefWidth="160.0" style="-fx-background-color: #D8BFD8;" text=" Clients" onAction="#setSceneClients">
+   <Button id="btnClients" fx:id="btnClients" layoutX="57.0" layoutY="227.0" mnemonicParsing="false" onAction="#setSceneClients" prefHeight="51.0" prefWidth="160.0" style="-fx-background-color: #D8BFD8;" text=" Clients">
       <font>
-         <Font size="18.0"/>
+         <Font size="18.0" />
       </font>
    </Button>
-   <Button fx:id="btnProducts" layoutX="242.0" layoutY="227.0" mnemonicParsing="false" prefHeight="51.0"
-           prefWidth="160.0" style="-fx-background-color: #D8BFD8;" text="Products" onAction="#setSceneProducts">
+   <Button fx:id="btnProducts" layoutX="242.0" layoutY="227.0" mnemonicParsing="false" onAction="#setSceneProducts" prefHeight="51.0" prefWidth="160.0" style="-fx-background-color: #D8BFD8;" text="Products">
       <font>
-         <Font size="18.0"/>
+         <Font size="18.0" />
       </font>
    </Button>
-   <Button fx:id="btnOrders" layoutX="428.0" layoutY="227.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="160.0"
-           style="-fx-background-color: #D8BFD8;" text="Orders" onAction="#setSceneOrders">
+   <Button fx:id="btnOrders" layoutX="428.0" layoutY="227.0" mnemonicParsing="false" onAction="#setSceneOrders" prefHeight="51.0" prefWidth="160.0" style="-fx-background-color: #D8BFD8;" text="Orders">
       <font>
-         <Font size="18.0"/>
+         <Font size="18.0" />
       </font>
    </Button>
-   <Label layoutX="140.0" layoutY="102.0" text="Database management">
+   <Label layoutX="101.0" layoutY="102.0" prefHeight="54.0" prefWidth="493.0" text="Order management system" textAlignment="CENTER">
       <font>
-         <Font size="36.0"/>
+         <Font size="36.0" />
       </font>
    </Label>
 </AnchorPane>

@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * View Class - contains methods related to the GUI: showAlert(String s) displays an alert on screed and
- * createTable(ArrayList<?> listOfObjects, TableView table) takes as parameters a receives a list of objects
+ * View Class - contains methods related to the GUI: showAlert(String s) displays an alert on screen and
+ * createTable(ArrayList<?> listOfObjects, TableView table) takes as parameters  a list of objects
  * and generates the header of the table by extracting through reflection the object properties and
  * then populates the table with the values of the elements from the list.
  */
