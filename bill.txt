@@ -1,0 +1,8 @@
+The details of your order: 
+----------------------------------------
+CLIENT:James Fraser
+PRODUCT: Mouse
+QUANTITY: 2
+TOTAL PRICE:100
+----------------------------------------
+Thank you for your purchase 
