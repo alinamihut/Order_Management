@@ -21,7 +21,9 @@ import model.Product;
 
 import java.awt.*;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PipedReader;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -99,6 +101,7 @@ public class ordersController {
             Product newProduct = new Product(product.getName(),product.getPrice(),stock);
             if (stock==0) productBLL.deleteProductById(idProduct);
             else productBLL.updateProduct(newProduct,idProduct);
+            writeBillToTextFile(newOrder);
         }
 
     }
@@ -112,6 +115,29 @@ public class ordersController {
         ArrayList<Order> ordersList;
         ordersList = OrderDAO.selectAll();
         View.createTable(ordersList,tbOrders);
+    }
+
+
+    public void writeBillToTextFile (Order o) throws IOException {
+        File file = new File("bill.txt");
+        file.createNewFile();
+        FileWriter fw = new FileWriter(file);
+        fw.write("The details of your order: \n");
+        fw.write("----------------------------------------\n");
+        Client c= ClientBLL.findClientById(o.getIdClient());
+        fw.write("CLIENT:" + c.getName());
+        fw.write("\n");
+        Product p=ProductBLL.findProductById(o.getIdProduct());
+        fw.write("PRODUCT: " + p.getName());
+        fw.write("\n");
+        fw.write("QUANTITY: " + o.getQuantity());
+        fw.write("\n");
+        int price = o.getQuantity() * p.getPrice();
+        fw.write("TOTAL PRICE:" + price);
+        fw.write("\n");
+        fw.write("----------------------------------------\n");
+        fw.write("Thank you for your purchase \n");
+        fw.close();
     }
 
 }

@@ -1,8 +1,6 @@
 package bll;
 
-import dao.ClientDAO;
 import dao.OrderDAO;
-import model.Client;
 import model.Order;
 import presentation.View;
 

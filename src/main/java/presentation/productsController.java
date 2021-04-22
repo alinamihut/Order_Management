@@ -60,7 +60,7 @@ public class productsController {
      */
     public void deleteProduct(ActionEvent actionEvent ) throws SQLException {
         ProductBLL.deleteProductById(Integer.parseInt(tfProductID.getText()));
-
+        clearTextFields();
     }
     /**
      * performs the update of a product on the action of the update button
@@ -75,6 +75,7 @@ public class productsController {
         int stock = Integer.parseInt(tfProductStock.getText());
         Product newProduct = new Product(id,name,price, stock);
         productBLL.updateProduct(newProduct,id);
+        clearTextFields();
 
     }
     /**
@@ -88,6 +89,7 @@ public class productsController {
         int stock = Integer.parseInt(tfProductStock.getText());
         Product newProduct = new Product(name,price, stock);
         productBLL.insertProduct(newProduct);
+        clearTextFields();
     }
     /**
      * displays all products on the action of the display button
@@ -99,5 +101,12 @@ public class productsController {
         ArrayList<Product> productsList;
         productsList = ProductDAO.selectAll();
         View.createTable(productsList,tbProducts);
+    }
+
+    private void clearTextFields(){
+        tfProductID.clear();
+        tfProductName.clear();
+        tfProductPrice.clear();
+        tfProductStock.clear();
     }
 }

@@ -58,6 +58,7 @@ public class clientsController {
      */
     public void deleteClient(ActionEvent actionEvent ) throws SQLException {
             clientBLL.deleteClientById(Integer.parseInt(tfClientID.getText()));
+            clearTextFields();
 
     }
     /**
@@ -72,7 +73,7 @@ public class clientsController {
         String phoneNumber = tfClientPhone.getText();
         Client newClient = new Client (id, name, email, phoneNumber);
         clientBLL.updateClient(newClient, id);
-
+        clearTextFields();
     }
     /**
      * performs the insertion of a client  on the action of the insert button
@@ -85,6 +86,7 @@ public class clientsController {
         String phoneNumber = tfClientPhone.getText();
         Client newClient = new Client (name, email, phoneNumber);
         clientBLL.insertClient(newClient);
+        clearTextFields();
         }
     /**
      * displays all clients on the action of the display button
@@ -96,8 +98,12 @@ public class clientsController {
             clientsList = ClientDAO.selectAll();
             View.createTable(clientsList,tableCustomers);
         }
-
-
+        private void clearTextFields(){
+            tfClientID.clear();
+            tfClientName.clear();
+            tfClientPhone.clear();
+            tfClientEmail.clear();
+        }
 
 }
 

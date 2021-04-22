@@ -19,5 +19,4 @@
     <Label layoutX="32.0" layoutY="81.0" prefHeight="18.0" prefWidth="54.0" text="Quantity:" />
    <ChoiceBox fx:id="cbClient" layoutX="94.0" layoutY="11.0" onMouseClicked="#setValuesForCbClients" prefWidth="150.0" />
    <ChoiceBox fx:id="cbProduct" layoutX="94.0" layoutY="44.0" onMouseClicked="#setValuesForCbProducts" prefWidth="150.0" />
-   <Button id="btnGenerateBill" fx:id="btnGenerateBill" layoutX="460.0" layoutY="17.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="125.0" text="Generate bill" />
 </AnchorPane>
