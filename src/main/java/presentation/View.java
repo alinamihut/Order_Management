@@ -10,12 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * View Class - contains methods related to the GUI: showAlert(String s) displays an alert on screen and
- * createTable(ArrayList<?> listOfObjects, TableView table) takes as parameters  a list of objects
- * and generates the header of the table by extracting through reflection the object properties and
- * then populates the table with the values of the elements from the list.
+ * View Class - contains methods related to the GUI
  */
 public class View {
+    /**
+     * displays an alert on screen
+     * @param s
+     */
     public static void showAlert(String s) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Message");
@@ -23,6 +24,12 @@ public class View {
         alert.show();
     }
 
+    /**
+     * generates the header of the table by extracting through reflection the object properties and
+     *  then populates the table with the values of the elements from the list.
+     * @param listOfObjects
+     * @param table
+     */
     public static void createTable(ArrayList<?> listOfObjects, TableView table){
         table.getItems().clear();
         table.getColumns().clear();

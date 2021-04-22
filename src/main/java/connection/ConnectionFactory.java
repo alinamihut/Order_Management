@@ -38,9 +38,18 @@ public class ConnectionFactory {
         return connection;
     }
 
+    /**
+     * getter for the connection
+     * @return
+     */
     public static Connection getConnection() {
         return singleInstance.createConnection();
     }
+
+    /**
+     * method for closing the connection
+     * @param connection
+     */
 
     public static void close(Connection connection) {
         if (connection != null) {
@@ -52,6 +61,10 @@ public class ConnectionFactory {
         }
     }
 
+    /**
+     * method for closing the statement
+     * @param statement
+     */
     public static void close(Statement statement) {
         if (statement != null) {
             try {
@@ -62,6 +75,10 @@ public class ConnectionFactory {
         }
     }
 
+    /**
+     * method for closing the result set
+     * @param resultSet
+     */
     public static void close(ResultSet resultSet) {
         if (resultSet != null) {
             try {

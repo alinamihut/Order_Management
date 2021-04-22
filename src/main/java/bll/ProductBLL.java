@@ -17,11 +17,16 @@ import java.util.NoSuchElementException;
 public class ProductBLL {
 
     private List<Validator<Product>> validators;
+
+
     public ProductBLL() {
         validators = new ArrayList<>();
         validators.add(new ProductValidator());
     }
-
+    /**
+     * application logic for finding a product by id
+     * @return
+     */
     public static Product findProductById(int id) {
         Product p = ProductDAO.findById(id);
         if (p == null) {
@@ -31,6 +36,11 @@ public class ProductBLL {
         }
         return p;
     }
+
+    /**
+     * application logic for inserting a product in the table
+     * @param product
+     */
 
     public void insertProduct(Product product) {
         for (Validator<Product> v : validators) {
@@ -42,6 +52,11 @@ public class ProductBLL {
         }
     }
 
+    /**
+     * application logic for deleting a product from the table
+     * @param id
+     * @throws SQLException
+     */
     public static void deleteProductById(int id) throws SQLException {
         Product p = ProductDAO.findById(id);
         if (p == null) {
@@ -51,6 +66,12 @@ public class ProductBLL {
         else ProductDAO.delete(p.getId());
         View.showAlert("The product with id =" + id + " was successfully deleted");
     }
+
+    /**
+     * application logic for updating a product in the table
+     * @param product
+     * @param id
+     */
 
     public void updateProduct (Product product, int id){
         Product p = ProductDAO.findById(id);
@@ -66,6 +87,10 @@ public class ProductBLL {
         }
     }
 
+    /**
+     * application logic for finding all the products in the table
+     * @return
+     */
     public static ArrayList<Product> selectAllProducts(){
         ArrayList<Product> productsList;
         productsList = ProductDAO.selectAll();

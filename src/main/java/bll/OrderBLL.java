@@ -19,6 +19,10 @@ public class OrderBLL {
         validators.add(new OrderValidator());
     }
 
+    /**
+     * application logic for inseting an order in the table
+     * @param order
+     */
     public void insertOrder(Order order) {
         for (Validator<Order> v : validators) {
             v.validate(order);

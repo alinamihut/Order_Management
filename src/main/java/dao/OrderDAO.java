@@ -18,6 +18,11 @@ public class OrderDAO{
             + " VALUES (?,?,?)";
     private final static String findAllStatementString = "SELECT * FROM ptassignment.order";
 
+    /**
+     * defines the operation of inserting an entry in the order table
+     * @param order
+     * @return
+     */
     public static int insert(Order order) {
         Connection dbConnection = ConnectionFactory.getConnection();
 
@@ -43,6 +48,10 @@ public class OrderDAO{
         return insertedId;
     }
 
+    /**
+     * defines the operation of finding all the entries in the orders table
+     * @return
+     */
     public static ArrayList<Order> selectAll () {
         Connection dbConnection = ConnectionFactory.getConnection();
         PreparedStatement findAllStatement = null;

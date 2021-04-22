@@ -4,9 +4,11 @@ import model.Client;
 import presentation.View;
 
 public class PhoneValidator implements Validator<Client>{
+
     /**
      * Override of the validate() method - verifies with a regex if the client to be inserted or updated in the database
-     * has a valid phone number and if not, the method throws an exception
+     *  has a valid phone number and if not, the method throws an exception
+     * @param client
      */
     @Override
     public void validate(Client client) {

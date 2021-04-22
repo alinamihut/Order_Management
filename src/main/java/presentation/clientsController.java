@@ -36,6 +36,12 @@ public class clientsController {
     public TextField tfClientPhone;
     public TableView tableCustomers;
     ClientBLL clientBLL = new ClientBLL();
+
+    /**
+     * sets the main scene on the action of the go back button
+     * @param actionEvent
+     * @throws IOException
+     */
     public void setSceneMain(ActionEvent actionEvent) throws IOException {
         URL url= new File("src/main/java/sample.fxml").toURI().toURL();
         Parent root= FXMLLoader.load(url);
@@ -45,12 +51,20 @@ public class clientsController {
         window.show();
 
     }
-
+    /**
+     * performs the deletion of a client  on the action of the delete button
+     * @param actionEvent
+     * @throws SQLException
+     */
     public void deleteClient(ActionEvent actionEvent ) throws SQLException {
             clientBLL.deleteClientById(Integer.parseInt(tfClientID.getText()));
 
     }
-
+    /**
+     * updates a client on the action of the update button
+     * @param actionEvent
+     * @throws SQLException
+     */
     public void updateClient(ActionEvent actionEvent ) throws SQLException {
         int id = Integer.parseInt(tfClientID.getText());
         String name = tfClientName.getText();
@@ -60,7 +74,11 @@ public class clientsController {
         clientBLL.updateClient(newClient, id);
 
     }
-
+    /**
+     * performs the insertion of a client  on the action of the insert button
+     * @param actionEvent
+     * @throws SQLException
+     */
     public void insertClient(ActionEvent actionEvent ) throws SQLException {
         String name = tfClientName.getText();
         String email = tfClientEmail.getText();
@@ -68,7 +86,11 @@ public class clientsController {
         Client newClient = new Client (name, email, phoneNumber);
         clientBLL.insertClient(newClient);
         }
-
+    /**
+     * displays all clients on the action of the display button
+     * @param actionEvent
+     * @throws SQLException
+     */
         public void showAllClients(ActionEvent actionEvent ) throws SQLException{
             ArrayList<Client> clientsList;
             clientsList = ClientDAO.selectAll();

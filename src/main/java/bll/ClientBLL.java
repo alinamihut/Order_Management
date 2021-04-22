@@ -14,12 +14,21 @@ import java.util.NoSuchElementException;
  **/
 public class ClientBLL {
     private List<Validator<Client>> validators;
+
+    /**
+     * constructor for the bussiness layer of the client logic
+     */
     public ClientBLL() {
         validators = new ArrayList<>();
         validators.add(new EmailValidator());
         validators.add(new PhoneValidator());
     }
 
+    /**
+     * application logic for finding a client by id
+     * @param id
+     * @return
+     */
     public static Client findClientById(int id) {
         Client c = ClientDAO.findById(id);
         if (c == null) {
@@ -29,6 +38,10 @@ public class ClientBLL {
         return c;
     }
 
+    /**
+     * application logic for inserting a client in the table
+     *  @param client
+     */
     public void insertClient(Client client) {
         for (Validator<Client> v : validators) {
             v.validate(client);
@@ -38,6 +51,11 @@ public class ClientBLL {
         }
     }
 
+    /**
+     * application logic for deleting a client from the table
+     * @param id
+     * @throws SQLException
+     */
     public void deleteClientById (int id) throws SQLException {
         Client c = ClientDAO.findById(id);
         if (c == null) {
@@ -50,6 +68,11 @@ public class ClientBLL {
         View.showAlert("The client with id =" + id + " was successfully deleted");
     }
 
+    /**
+     * application logic for updating a client in the table
+     * @param client
+     * @param id
+     */
     public void updateClient (Client client, int id){
         Client c = ClientDAO.findById(id);
         if (c == null) {
@@ -64,6 +87,11 @@ public class ClientBLL {
         }
 
     }
+
+    /**
+     * application logic for selecting all the clientd from the table
+     * @return
+     */
 
     public static ArrayList<Client> selectAllClients(){
         ArrayList<Client> clientsList;

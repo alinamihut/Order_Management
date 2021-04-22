@@ -37,6 +37,12 @@ public class productsController {
     public TextField tfProductPrice;
     public TableView tbProducts;
     ProductBLL productBLL = new ProductBLL();
+
+    /**
+     * initializes the main scene on the action of the go back button
+     * @param actionEvent
+     * @throws IOException
+     */
     public void setSceneMain(ActionEvent actionEvent) throws IOException {
         URL url= new File("src/main/java/sample.fxml").toURI().toURL();
         Parent root= FXMLLoader.load(url);
@@ -47,10 +53,20 @@ public class productsController {
 
     }
 
+    /**
+     * performs the deletion of a product on the action of the delete button
+     * @param actionEvent
+     * @throws SQLException
+     */
     public void deleteProduct(ActionEvent actionEvent ) throws SQLException {
         ProductBLL.deleteProductById(Integer.parseInt(tfProductID.getText()));
 
     }
+    /**
+     * performs the update of a product on the action of the update button
+     * @param actionEvent
+     * @throws SQLException
+     */
 
     public void updateProduct(ActionEvent actionEvent ) throws SQLException {
         int id = Integer.parseInt(tfProductID.getText());
@@ -61,7 +77,11 @@ public class productsController {
         productBLL.updateProduct(newProduct,id);
 
     }
-
+    /**
+     * performs the insertion of a product on the action of the insert button
+     * @param actionEvent
+     * @throws SQLException
+     */
     public void insertProduct(ActionEvent actionEvent ) throws SQLException {
         String name = tfProductName.getText();
         int price = Integer.parseInt(tfProductPrice.getText());
@@ -69,6 +89,11 @@ public class productsController {
         Product newProduct = new Product(name,price, stock);
         productBLL.insertProduct(newProduct);
     }
+    /**
+     * displays all products on the action of the display button
+     * @param actionEvent
+     * @throws SQLException
+     */
 
     public void showAllProducts(ActionEvent actionEvent ) throws SQLException{
         ArrayList<Product> productsList;

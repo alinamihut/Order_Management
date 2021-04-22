@@ -11,12 +11,16 @@ import java.io.IOException;
 import java.net.URL;
 /**
  * @author Alina
- * Main class -
- * contains the methods which initialize the primary stage and lauch the application
+ * Main class
  **/
     public class Main extends Application {
-
-        @Override
+    /**
+     *
+     * @param primaryStage
+     * @throws IOException
+     * contains the methods which initialize the primary stage
+     */
+    @Override
         public void start(Stage primaryStage) throws IOException {
 
             URL url= new File("src/main/java/sample.fxml").toURI().toURL();
@@ -26,6 +30,11 @@ import java.net.URL;
             primaryStage.show();
         }
 
+    /**
+     *
+     * @param args
+     * lauches the application
+     */
         public static void main(String[] args) {
             launch();
         }

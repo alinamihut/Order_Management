@@ -25,6 +25,11 @@ public class Controller {
     public Button btnProducts;
     public Button btnOrders;
 
+    /**
+     * sets the Clients scene on the action of the corresponding button
+     * @param actionEvent
+     * @throws IOException
+     */
 
     public void setSceneClients(ActionEvent actionEvent) throws IOException {
         URL url= new File("src/main/java/clients.fxml").toURI().toURL();
@@ -37,6 +42,11 @@ public class Controller {
 
     }
 
+    /**
+     * sets the Products scene on the action of the corresponding button
+     * @param actionEvent
+     * @throws IOException
+     */
     public void setSceneProducts(ActionEvent actionEvent) throws IOException {
         URL url= new File("src/main/java/products.fxml").toURI().toURL();
         Parent root= FXMLLoader.load(url);
@@ -47,7 +57,11 @@ public class Controller {
         window.show();
 
     }
-
+    /**
+     * sets the Orders scene on the action of the corresponding button
+     * @param actionEvent
+     * @throws IOException
+     */
     public void setSceneOrders(ActionEvent actionEvent) throws IOException {
         URL url= new File("src/main/java/orders.fxml").toURI().toURL();
         Parent root= FXMLLoader.load(url);

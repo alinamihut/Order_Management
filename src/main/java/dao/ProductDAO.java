@@ -22,6 +22,12 @@ public class ProductDAO {
     private static final String deleteStatementString = "DELETE FROM product WHERE id = ?";
     private static final String updateStatementString = "UPDATE product SET name = ?, price = ?, stock = ? WHERE id = ?";
     private final static String findAllStatementString = "SELECT * FROM product";
+
+    /**
+     * defines the operation of finding an entry in the product table by id
+     * @param productId
+     * @return
+     */
     public static Product findById(int productId) {
         Product toReturn = null;
 
@@ -48,6 +54,11 @@ public class ProductDAO {
         return toReturn;
     }
 
+    /**
+     * defines the operation of inserting an entry in the products table
+     * @param product
+     * @return
+     */
     public static int insert(Product product) {
         Connection dbConnection = ConnectionFactory.getConnection();
 
@@ -73,7 +84,11 @@ public class ProductDAO {
         return insertedId;
     }
 
-
+    /**
+     * defines the operation of deleting an entry from the products table
+     * @param productId
+     * @throws SQLException
+     */
     public static void delete(int productId) throws SQLException {
         Connection dbConnection = ConnectionFactory.getConnection();
 
@@ -94,6 +109,12 @@ public class ProductDAO {
         }
     }
 
+    /**
+     * defines the operation of updating an entry in the products table
+     * @param product
+     * @param productID
+     * @return
+     */
     public static int update (Product product, int productID){
         Connection dbConnection = ConnectionFactory.getConnection();
 
@@ -120,6 +141,10 @@ public class ProductDAO {
         return updatedId;
     }
 
+    /**
+     * defines the operation of finding all the entries in the products table
+     * @return
+     */
     public static ArrayList<Product> selectAll () {
         Connection dbConnection = ConnectionFactory.getConnection();
         PreparedStatement findAllStatement = null;

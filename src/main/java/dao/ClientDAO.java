@@ -23,6 +23,12 @@ public class ClientDAO{
     private static final String deleteStatementString = "DELETE FROM client WHERE id = ?";
     private static final String updateStatementString = "UPDATE client SET name = ?, email = ?, phoneNumber = ? WHERE id = ?";
     private final static String findAllStatementString = "SELECT * FROM client";
+
+    /**
+     * defines the operation of finding an entry in the clients table by id
+     * @param clientId
+     * @return
+     */
     public static Client findById(int clientId) {
             Client toReturn = null;
 
@@ -49,6 +55,11 @@ public class ClientDAO{
             return toReturn;
         }
 
+    /**
+     * defines the operation of inserting an entry in the clients table
+     * @param client
+     * @return
+     */
     public static int insert(Client client) {
         Connection dbConnection = ConnectionFactory.getConnection();
 
@@ -74,7 +85,11 @@ public class ClientDAO{
         return insertedId;
     }
 
-
+    /**
+     * defines the operation of deleting an entry from the clients table by id
+     * @param clientId
+     * @throws SQLException
+     */
     public static void delete(int clientId) throws SQLException {
         Connection dbConnection = ConnectionFactory.getConnection();
 
@@ -97,6 +112,12 @@ public class ClientDAO{
     }
     }
 
+    /**
+     * defines the operation of updating an entry in the clients table
+     * @param client
+     * @param clientID
+     * @return
+     */
     public static int update (Client client, int clientID){
         Connection dbConnection = ConnectionFactory.getConnection();
 
@@ -123,6 +144,10 @@ public class ClientDAO{
         return updatedId;
     }
 
+    /**
+     * defines the operation of finding all the entries in the clients table
+     * @return
+     */
     public static ArrayList<Client> selectAll () {
         Connection dbConnection = ConnectionFactory.getConnection();
         PreparedStatement findAllStatement = null;
